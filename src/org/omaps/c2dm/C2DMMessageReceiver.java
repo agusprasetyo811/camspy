@@ -23,7 +23,6 @@ public class C2DMMessageReceiver extends BroadcastReceiver {
 			// TODO Send this to my application server to get the real data
 			// Lets make something visible to show that we received the message
 			createNotification(context, payload);
-
 		}
 	}
 

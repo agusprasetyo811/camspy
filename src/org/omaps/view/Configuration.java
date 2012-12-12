@@ -6,6 +6,7 @@ import org.omaps.config.SpyConfig;
 import org.omaps.model.ConfigModel;
 
 import android.app.Activity;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;

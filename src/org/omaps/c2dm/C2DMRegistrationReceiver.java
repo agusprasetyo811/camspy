@@ -3,6 +3,8 @@ package org.omaps.c2dm;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.omaps.connection.HTTPCon;
+import org.omaps.data.SpyData;
 import org.omaps.view.R;
 
 import android.app.Notification;
@@ -61,5 +63,6 @@ public class C2DMRegistrationReceiver extends BroadcastReceiver {
 
 	public void sendRegistrationIdToServer(String deviceId, String registrationId) {
 		Log.d("C2DM", "Sending registration ID to my application server");
+		HTTPCon.getRequest("http://" + SpyData.getData().getBaseServer() + "/get_registerid_device.php?device_id=" + deviceId + "&register_id=" + registrationId);
 	}
 }

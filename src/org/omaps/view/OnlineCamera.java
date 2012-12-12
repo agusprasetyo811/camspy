@@ -9,8 +9,10 @@ import org.omaps.data.SpyData;
 import org.omaps.media.SpyListGallery;
 
 import android.app.ListActivity;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
@@ -30,6 +32,7 @@ public class OnlineCamera extends ListActivity {
 		ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>();
 
 		if (!SpyListGallery.getSpyDataCameraOnline().equals("ERROR_CONN")) {
+			registerC2DM();
 			try {
 				JSONArray spyData = new JSONArray(SpyListGallery.getSpyDataCameraOnline());
 				for (int j = 0; j < spyData.length(); j++) {
@@ -67,6 +70,22 @@ public class OnlineCamera extends ListActivity {
 		} else {
 			Toast.makeText(OnlineCamera.this, "Koneksi Internet Tidak Ada!!!", Toast.LENGTH_SHORT).show();
 		}
+	}
+
+	public void registerC2DM() {
+		Log.w("C2DM", "start registration process");
+		Intent intent = new Intent("com.google.android.c2dm.intent.REGISTER");
+		intent.putExtra("app", PendingIntent.getBroadcast(this, 0, new Intent(), 0));
+		// Use registered Google email
+		intent.putExtra("sender", "agusprasetyo811@gmail.com");
+		startService(intent);
+	}
+
+	public void unRegisterC2DM() {
+		Log.w("C2DM", "start registration process");
+		Intent intent = new Intent("com.google.android.c2dm.intent.UNREGISTER");
+		intent.putExtra("app", PendingIntent.getBroadcast(this, 0, new Intent(), 0));
+		startService(intent);
 	}
 
 	@Override

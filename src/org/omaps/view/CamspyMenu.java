@@ -70,8 +70,6 @@ public class CamspyMenu extends Activity {
 				}
 			}
 		});
-		
-		registerC2DM();
 	}
 
 	public class ImageAdapter extends BaseAdapter {
@@ -109,22 +107,6 @@ public class CamspyMenu extends Activity {
 			imageView.setImageResource(imagesID[position]);
 			return imageView;
 		}
-	}
-
-	public void registerC2DM() {
-		Log.w("C2DM", "start registration process");
-		Intent intent = new Intent("com.google.android.c2dm.intent.REGISTER");
-		intent.putExtra("app", PendingIntent.getBroadcast(this, 0, new Intent(), 0));
-		// Use registered Google email
-		intent.putExtra("sender", "agusprasetyo811@gmail.com");
-		startService(intent);
-	}
-	
-	public void unRegisterC2DM() {
-		Log.w("C2DM", "start registration process");
-		Intent intent = new Intent("com.google.android.c2dm.intent.UNREGISTER");
-		intent.putExtra("app", PendingIntent.getBroadcast(this, 0, new Intent(), 0));
-		startService(intent);
 	}
 
 	@Override
