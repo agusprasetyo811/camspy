@@ -4,24 +4,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.net.ConnectException;
+import java.net.UnknownHostException;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
 
 import android.util.Log;
 
 public class HTTPCon {
 
 	private static final String DEB_TAG = "Nevz_Android";
-	private static List<NameValuePair> nameValuePairs;
 
 	public HTTPCon() {
 		// TODO Auto-generated constructor stub
@@ -37,32 +32,13 @@ public class HTTPCon {
 			HttpResponse response = client.execute(request);
 			getResponse = request(response).toString();
 			Log.i(DEB_TAG, "Conneced");
+		} catch (UnknownHostException e) {
+			System.out.println("Url Not Found");
+		} catch (ConnectException e) {
+			System.out.println("Time Out or Denied");
 		} catch (Exception e) {
 			getResponse = "ERROR_CONN";
 			System.out.println("Failed Connect to Server");
-		}
-		return getResponse;
-	}
-
-	// Method login untuk mengirim data ke server dengan method post
-	public static String postRequestLogin(String url, String user, String pass) {
-		String getResponse = null;
-		Log.i(DEB_TAG, url);
-		HttpClient client = new DefaultHttpClient();
-		HttpPost post = new HttpPost(url);
-		nameValuePairs = new ArrayList<NameValuePair>(2);
-
-		// Add Parameter ke server
-		nameValuePairs.add(new BasicNameValuePair("user", user));
-		nameValuePairs.add(new BasicNameValuePair("pass", pass));
-
-		// mengirimkan Message ke server
-		try {
-			post.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-			HttpResponse response = client.execute(post);
-			getResponse = request(response).toString();
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
 		return getResponse;
 	}
