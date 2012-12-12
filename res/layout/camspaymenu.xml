@@ -22,7 +22,7 @@
 		android:layout_height="wrap_content" android:layout_width="wrap_content"
 		android:layout_below="@+id/body" android:layout_alignParentBottom="true"
 		android:layout_alignParentRight="true" android:layout_alignParentLeft="true">
-		<GridView android:layout_width="match_parent" android:id="@+id/gridViewBody" android:layout_height="188dp" android:numColumns="3" android:layout_x="0dp" android:layout_y="92dp"></GridView>
+		<GridView android:layout_width="300dp" android:id="@+id/gridViewBody" android:layout_height="188dp" android:numColumns="3" android:layout_x="16dp" android:layout_y="72dp"></GridView>
 	</AbsoluteLayout>
 
 	</RelativeLayout>

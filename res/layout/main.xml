@@ -1,12 +1,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
 	android:orientation="vertical" android:background="@android:color/white">
-
 	<ListView android:id="@id/android:list" android:layout_width="fill_parent"
 		android:layout_height="wrap_content" android:layout_weight="1"
 		android:drawSelectorOnTop="false" />
 
 	<TextView android:id="@id/android:empty" android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:text="No data" />
+		android:layout_height="fill_parent" android:textSize="30dp" android:text="Data Masih Kosong!!"
+		android:textColor="@android:color/black" android:layout_gravity="center_vertical"
+		android:gravity="center" />
 
 </LinearLayout>
