@@ -36,6 +36,8 @@ public class ListGallery extends ListActivity {
 			Toast.makeText(ListGallery.this, "Koneksi Internet Tidak Ada!!!", Toast.LENGTH_SHORT).show();
 		} else if (SpyListGallery.getSpyDataListVideo(camera).equals("ERROR_PARSING")) {
 			Toast.makeText(ListGallery.this, "Data Masih Kosong!!", Toast.LENGTH_SHORT).show();
+		} else if (SpyListGallery.getSpyDataListVideo(camera).equals("ERROR_ADDR")) {
+			Toast.makeText(ListGallery.this, "Server Salah. Coba Cek Konfigurasi kembali!!!", Toast.LENGTH_SHORT).show();
 		} else {
 			try {
 				JSONArray spyData = new JSONArray(SpyListGallery.getSpyDataListVideo(camera));

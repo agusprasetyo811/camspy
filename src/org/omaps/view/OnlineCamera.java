@@ -31,7 +31,11 @@ public class OnlineCamera extends ListActivity {
 		setContentView(R.layout.main);
 		ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>();
 
-		if (!SpyListGallery.getSpyDataCameraOnline().equals("ERROR_CONN")) {
+		if (SpyListGallery.getSpyDataCameraOnline().equals("ERROR_CONN")) {
+			Toast.makeText(OnlineCamera.this, "Koneksi Internet Tidak Ada!!!", Toast.LENGTH_SHORT).show();
+		} else if (SpyListGallery.getSpyDataCameraOnline().equals("ERROR_ADDR")) {
+			Toast.makeText(OnlineCamera.this, "Server Salah. Coba Cek Konfigurasi kembali!!!", Toast.LENGTH_SHORT).show();
+		} else {
 			registerC2DM();
 			try {
 				JSONArray spyData = new JSONArray(SpyListGallery.getSpyDataCameraOnline());
@@ -67,8 +71,7 @@ public class OnlineCamera extends ListActivity {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		} else {
-			Toast.makeText(OnlineCamera.this, "Koneksi Internet Tidak Ada!!!", Toast.LENGTH_SHORT).show();
+
 		}
 	}
 

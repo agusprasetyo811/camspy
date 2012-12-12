@@ -12,22 +12,28 @@ public class SpyListGallery {
 
 	public static String getSpyDataCameraOnline() {
 		String data = HTTPCon.getRequest("http://" + SpyData.getData().getBaseServer() + "/list_camera.php");
-		if (!data.equals("ERROR_CONN")) {
+		if (data.equals("ERROR_CONN")) {
+			return "ERROR_CONN";
+		} else if (data.contains("Object not found!")) {
+			return "ERROR_ADDR";
+		} else {
 			try {
 				JSONObject spyData = new JSONObject(data);
 				return spyData.getString("data");
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
-		} else {
-			return "ERROR_CONN";
 		}
 		return null;
 	}
 
 	public static String getSpyDataListVideo(String camera) {
 		String data = HTTPCon.getRequest("http://" + SpyData.getData().getBaseServer() + "/data.php?camera=" + camera);
-		if (!data.equals("ERROR_CONN")) {
+		if (data.equals("ERROR_CONN")) {
+			return "ERROR_CONN";
+		} else if (data.contains("Object not found!")) {
+			return "ERROR_ADDR";
+		} else {
 			try {
 				JSONObject spyData = new JSONObject(data);
 				String spyFiles = spyData.getString("Files");
@@ -43,8 +49,6 @@ public class SpyListGallery {
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
-		} else {
-			return "ERROR_CONN";
 		}
 		return null;
 	}
