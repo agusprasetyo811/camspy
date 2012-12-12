@@ -119,6 +119,13 @@ public class CamspyMenu extends Activity {
 		intent.putExtra("sender", "agusprasetyo811@gmail.com");
 		startService(intent);
 	}
+	
+	public void unRegisterC2DM() {
+		Log.w("C2DM", "start registration process");
+		Intent intent = new Intent("com.google.android.c2dm.intent.UNREGISTER");
+		intent.putExtra("app", PendingIntent.getBroadcast(this, 0, new Intent(), 0));
+		startService(intent);
+	}
 
 	@Override
 	public void onBackPressed() {
