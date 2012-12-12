@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:fillViewport="true"
+	android:background="#ffffff">
+
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:background="#ffffff">
+
+		<ImageView android:id="@+id/line" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:paddingBottom="5dp"
+			android:background="#000fff" android:layout_below="@+id/header" />
+
+		<LinearLayout android:id="@+id/body" android:background="#ffffff"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_below="@+id/line">
+
+			<ImageView android:id="@+id/logohome" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:src="@drawable/logo"
+				android:layout_marginTop="50dp" />
+		</LinearLayout>
+		<FrameLayout android:id="@+id/frameLayout1"
+			android:layout_height="wrap_content" android:layout_width="wrap_content"
+			android:layout_below="@+id/body" android:layout_alignParentBottom="true"
+			android:layout_alignParentRight="true"
+			android:layout_alignParentLeft="true">
+			<GridView android:id="@+id/gridViewBody"
+				android:layout_height="match_parent" android:layout_width="match_parent"
+				android:numColumns="3"></GridView>
+		</FrameLayout>
+
+	</RelativeLayout>
+</ScrollView>

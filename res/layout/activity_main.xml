@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:fillViewport="true"
+	android:background="#ffffff">
+
+	<RelativeLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:background="#ffffff">
+
+		<LinearLayout android:id="@+id/header"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:paddingTop="5dp" android:paddingBottom="5dp"
+			android:background="#000000">
+
+			<ImageView android:id="@+id/logo" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:src="@drawable/logo" />
+
+		</LinearLayout>
+
+		<ImageView android:id="@+id/line" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:paddingBottom="5dp"
+			android:background="#000fff" android:layout_below="@+id/header" />
+
+		<LinearLayout android:id="@+id/body" android:background="#ffffff"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:layout_below="@+id/line">
+
+			<ImageView android:id="@+id/logohome" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:src="@drawable/logo"
+				android:layout_marginTop="50dp" />
+		</LinearLayout>
+		<Button android:id="@+id/btnadd" android:text=" Configuration "
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_marginTop="50dp" android:layout_marginLeft="35dp"
+			android:layout_below="@+id/body" />
+
+		<Button android:id="@+id/btnext" android:text="Existing IP"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_marginTop="50dp" android:layout_toRightOf="@+id/btnadd"
+			android:layout_marginLeft="80dp" android:layout_below="@+id/body" />
+
+		<Button android:id="@+id/btngal" android:text="   Camera Online   "
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_marginTop="40dp" android:layout_marginLeft="35dp"
+			android:layout_below="@+id/btnadd" />
+
+		<Button android:id="@+id/btnexit" android:text="      Exit      "
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_marginTop="40dp" android:layout_toRightOf="@+id/btngal"
+			android:layout_marginLeft="80dp" android:layout_below="@+id/btnext" />
+
+	</RelativeLayout>
+</ScrollView>
