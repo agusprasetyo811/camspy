@@ -3,16 +3,21 @@
 	package="org.omaps.view" android:versionCode="1" android:versionName="1.0">
 	<uses-sdk android:minSdkVersion="10" />
 
+	<permission android:name="org.omaps.view.permission.C2D_MESSAGE"
+		android:protectionLevel="signature" />
+	<uses-permission android:name="org.omaps.view.permission.C2D_MESSAGE" />
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.INTERNET" />
+
 	<application android:icon="@drawable/icon" android:label="@string/app_name">
-		<meta-data android:name="com.google.android.backup.api_key"
-			android:value="AEdPqrEAAAAISNzyIGtOTLxFGZLFBOs3bsb-TpTonVsA-u9pqQ" />
 		<activity android:name=".Splashscreen" android:label="@string/app_name">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:name=".Camspy"></activity>
 		<activity android:name=".CamspyMenu"></activity>
 		<activity android:name=".TestConnect"></activity>
 		<activity android:name=".VideoSample"></activity>
@@ -21,28 +26,14 @@
 		<activity android:name=".Configuration"></activity>
 		<activity android:name=".OnlineCamera"></activity>
 
-		<receiver android:name="org.omaps.c2dm.C2DMMessageReceiver"
+		<receiver android:name="org.omaps.gcm.MyBroadcastReceiver"
 			android:permission="com.google.android.c2dm.permission.SEND">
 			<intent-filter>
 				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
-				<category android:name="org.omaps.view" />
+				<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+				<category android:name="org.omaps.gcm" />
 			</intent-filter>
 		</receiver>
-		<receiver android:name="org.omaps.c2dm.C2DMRegistrationReceiver"
-			android:permission="com.google.android.c2dm.permission.SEND">
-			<intent-filter>
-				<action android:name="com.google.android.c2dm.intent.REGISTRATION">
-				</action>
-				<category android:name="org.omaps.view" />
-			</intent-filter>
-		</receiver>
+		<service android:name=".MyIntentService" />
 	</application>
-	<permission android:name="org.omaps.view.permission.C2D_MESSAGE"
-		android:protectionLevel="signature" />
-	<uses-permission android:name="org.omaps.view.permission.C2D_MESSAGE" />
-
-	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-	<uses-permission android:name="android.permission.GET_ACCOUNTS" />
-	<uses-permission android:name="android.permission.WAKE_LOCK" />
-	<uses-permission android:name="android.permission.INTERNET" />
 </manifest>

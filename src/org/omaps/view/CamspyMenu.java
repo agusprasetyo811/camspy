@@ -6,10 +6,14 @@ import org.omaps.config.SpyConfig;
 import org.omaps.data.SpyData;
 import org.omaps.model.ConfigModel;
 
+import com.google.android.gcm.GCMRegistrar;
+
 import android.app.Activity;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -27,6 +31,8 @@ public class CamspyMenu extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.camspaymenu);
+
+		registerGCM();
 
 		// Set Configurasi Apakah sudah ada didalam database
 		String data = model.show().toString().replace("/", "_");
@@ -105,6 +111,14 @@ public class CamspyMenu extends Activity {
 			imageView.setImageResource(imagesID[position]);
 			return imageView;
 		}
+	}
+
+	public void registerGCM() {
+		Log.i(SpyConfig.SPY_LOGGING, "Start Registration");
+		Intent registrationIntent = new Intent("com.google.android.c2dm.intent.REGISTER");
+		registrationIntent.putExtra("app", PendingIntent.getBroadcast(this, 0, new Intent(), 0));
+		registrationIntent.putExtra("sender", SpyConfig.SPY_SENDER_ID);
+		startService(registrationIntent);
 	}
 
 	@Override

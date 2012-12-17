@@ -11,5 +11,7 @@ public class SpyConfig {
 
 	public static String SPY_DB_NAME = "spy_data";
 	public static String SPY_CONFIG_TABLE = "config";
+	
+	public static String SPY_SENDER_ID = "972564378948";
 
 }
