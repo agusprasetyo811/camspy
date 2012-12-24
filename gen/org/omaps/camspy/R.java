@@ -29,12 +29,13 @@ public final class R {
         public static final int icon=0x7f020005;
         public static final int line=0x7f020006;
         public static final int logo=0x7f020007;
-        public static final int pause_button=0x7f020008;
-        public static final int seekbarcolors=0x7f020009;
-        public static final int splash=0x7f02000a;
-        public static final int splashscreen=0x7f02000b;
-        public static final int stub=0x7f02000c;
-        public static final int thumb=0x7f02000d;
+        public static final int notif_logo=0x7f020008;
+        public static final int pause_button=0x7f020009;
+        public static final int seekbarcolors=0x7f02000a;
+        public static final int splash=0x7f02000b;
+        public static final int splashscreen=0x7f02000c;
+        public static final int stub=0x7f02000d;
+        public static final int thumb=0x7f02000e;
     }
     public static final class id {
         public static final int body=0x7f080003;
