@@ -8,8 +8,8 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="2" corner="BOTTOM_RIGHT" language="java" name="org.omaps.view.Configuration" project="CAMSPYS" 
-    file="/CAMSPYS/src/org/omaps/view/Configuration.java" binary="false">    
+  <class id="2" corner="BOTTOM_RIGHT" language="java" name="org.omaps.camspy.Configuration" project="CAMSPYS" 
+    file="/CAMSPYS/src/org/omaps/camspy/Configuration.java" binary="false">    
     <position height="-1" width="-1" x="560" y="315"/>    
     <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -24,16 +24,16 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="4" corner="BOTTOM_RIGHT" language="java" name="org.omaps.view.ListGallery" project="CAMSPYS" 
-    file="/CAMSPYS/src/org/omaps/view/ListGallery.java" binary="false">    
+  <class id="4" corner="BOTTOM_RIGHT" language="java" name="org.omaps.camspy.ListGallery" project="CAMSPYS" 
+    file="/CAMSPYS/src/org/omaps/camspy/ListGallery.java" binary="false">    
     <position height="115" width="192" x="526" y="42"/>    
     <display autosize="false" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="5" corner="BOTTOM_RIGHT" language="java" name="org.omaps.view.VideoPlay" project="CAMSPYS" 
-    file="/CAMSPYS/src/org/omaps/view/VideoPlay.java" binary="false">    
+  <class id="5" corner="BOTTOM_RIGHT" language="java" name="org.omaps.camspy.VideoPlay" project="CAMSPYS" 
+    file="/CAMSPYS/src/org/omaps/camspy/VideoPlay.java" binary="false">    
     <position height="-1" width="-1" x="798" y="345"/>    
     <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      

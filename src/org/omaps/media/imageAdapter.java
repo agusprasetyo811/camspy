@@ -1,6 +1,6 @@
 package org.omaps.media;
 
-import org.omaps.view.R;
+import org.omaps.camspy.R;
 
 import android.app.Activity;
 import android.content.Context;

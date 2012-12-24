@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="org.omaps.view" android:versionCode="1" android:versionName="1.0">
+	package="org.omaps.camspy" android:versionCode="1" android:versionName="1.0">
 	<uses-sdk android:minSdkVersion="10" />
 
-	<permission android:name="org.omaps.view.permission.C2D_MESSAGE"
+	<permission android:name="org.omaps.camspy.permission.C2D_MESSAGE"
 		android:protectionLevel="signature" />
-	<uses-permission android:name="org.omaps.view.permission.C2D_MESSAGE" />
+	<uses-permission android:name="org.omaps.camspy.permission.C2D_MESSAGE" />
 	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 	<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+	<uses-permission android:name="android.permission.USE_CREDENTIALS" />
 	<uses-permission android:name="android.permission.WAKE_LOCK" />
 	<uses-permission android:name="android.permission.INTERNET" />
 
 	<application android:icon="@drawable/icon" android:label="@string/app_name">
-		<activity android:name=".Splashscreen" android:label="@string/app_name">
+		<activity android:name="org.omaps.camspy.Splashscreen"
+			android:label="@string/app_name">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
@@ -24,16 +26,16 @@
 		<activity android:name=".ListGallery"></activity>
 		<activity android:name=".VideoPlay"></activity>
 		<activity android:name=".Configuration"></activity>
-		<activity android:name=".OnlineCamera"></activity>
+		<activity android:name="org.omaps.camspy.OnlineCamera"></activity>
 
-		<receiver android:name="org.omaps.gcm.MyBroadcastReceiver"
+		<receiver android:name="com.google.android.gcm.GCMBroadcastReceiver"
 			android:permission="com.google.android.c2dm.permission.SEND">
 			<intent-filter>
 				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
 				<action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-				<category android:name="org.omaps.gcm" />
+				<category android:name="org.omaps.camspy" />
 			</intent-filter>
 		</receiver>
-		<service android:name=".MyIntentService" />
+		<service android:name="org.omaps.camspy.GCMIntentService" />
 	</application>
 </manifest>

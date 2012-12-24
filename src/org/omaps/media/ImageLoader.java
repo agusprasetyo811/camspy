@@ -15,7 +15,7 @@ import java.util.WeakHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import org.omaps.view.R;
+import org.omaps.camspy.R;
 
 import android.app.Activity;
 import android.content.Context;
