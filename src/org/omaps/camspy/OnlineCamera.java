@@ -9,6 +9,7 @@ import org.omaps.data.SpyData;
 import org.omaps.media.SpyListGallery;
 import org.omaps.camspy.R;
 import org.omaps.config.SpyConfig;
+import org.omaps.connection.HTTPCon;
 
 import com.google.android.gcm.GCMRegistrar;
 
@@ -91,6 +92,7 @@ public class OnlineCamera extends ListActivity {
 			Log.v(SpyConfig.SPY_LOGGING, "Register in Progress");
 		} else {
 			Log.v(SpyConfig.SPY_LOGGING, "Already registered");
+			HTTPCon.getRequest("http://" + SpyData.getData().getBaseServer() + "/get_registerid_device.php?device_id=" + regId);
 		}
 	}
 
